@@ -2,15 +2,11 @@ import express from "express";
 
 const app = express();
 
-app.use("/", (req, res, next) => {
-    console.log("HOOOOOOOOOOOOOOOOOOOOO")
-    next()
-})
+// Import routers
+import {userRouter} from "./routers/user.js";
+app.use(express.json());
 
-app.get("/", (req, res, next) => {
-    console.log("hello world")
-    res.send("<h1>Hello. Welcome to the application</h1>")
-})
+app.use("/user", userRouter);
 
 
 app.listen(3000, () => {
