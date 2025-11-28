@@ -4,10 +4,10 @@ import mongoose from "mongoose";
 const app = express();
 
 // Import routers
-import {userRouter} from "./routers/user.js";
-app.use(express.json());
 
-app.use("/user", userRouter);
+
+// Other common middlewares
+app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost:27017/mydatabase")
